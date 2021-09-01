@@ -1,6 +1,6 @@
 on: [push]
 
-name: Deploy to Amazon ECS
+name: Deploy to Amazon ECS TESTING
 
 jobs:
   deploy:
