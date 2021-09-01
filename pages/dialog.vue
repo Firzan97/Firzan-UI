@@ -1,120 +1,213 @@
 <template>
-  <div class="bg-gray-800 h-screen w-screen fixed">
-    <div class="m-2">
-      <button
+  <div>
+    <button
+      class="
+        bg-green-500
+        text-white
+        active:bg-green-600
+        font-bold
+        uppercase
+        text-sm
+        px-6
+        py-2
+        mt-1
+        rounded
+        shadow
+        hover:shadow-lg
+        outline-none
+        focus:outline-none
+        mr-1
+        mb-1
+        ease-linear
+        transition-all
+        duration-150
+      "
+      type="button"
+      @click="toggleModal()"
+    >
+      Add
+    </button>
+    <transition name="fade">
+      <div
+        v-if="showModal"
         class="
-          relative
-          block
-          p-2
-          m-2
-          bg-white
-          rounded
-          shadow-md
-          ring-1 ring-black ring-opacity-5
-          text-sm
-          overflow-hidden
-          focus:outline-none focus:border-red
-          w-48
+          overflow-y-auto
+          fixed
+          inset-0
+          z-50
+          outline-none
+          focus:outline-none
+          justify-center
+          items-center
+          flex
+          animated
+          fadeIn
         "
-        @click="openMenu()"
-        @onfocusout="openMenu()"
       >
-        <span class="flex items-center">
-          <img
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-            alt=""
-            class="flex-shrink-0 h-6 w-6 rounded-full"
-          />
-          <span class="ml-3 block truncate"> Tom Cook </span>
-        </span>
-        <span
-          class="
-            ml-3
-            absolute
-            inset-y-0
-            right-0
-            flex
-            items-center
-            pr-2
-            pointer-events-none
-          "
-        >
-          <!-- Heroicon name: solid/selector -->
-          <svg
-            class="h-5 w-5 text-gray-400"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
+        <div class="relative w-auto my-6 mx-auto max-w-sm">
+          <!--content-->
+          <div
+            class="
+              border-0
+              rounded-lg
+              shadow-lg
+              relative
+              w-1/2
+              flex flex-col
+              w-full
+              bg-white
+              outline-none
+              focus:outline-none
+              break-words
+            "
           >
-            <path
-              fill-rule="evenodd"
-              d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </button>
-      <button
-        @click="openMenu()"
-        v-if="isOpen"
-        tabindex="-1"
-        class="fixed inset-0 w-full h-full bg-grey-100 cursor-default"
-      ></button>
-      <transition name="fade">
-        <div
-          v-if="isOpen"
-          class="
-            absolute
-            bg-white
-            left-0
-            ml-4
-            rounded-sm
-            shadow-lg
-            w-48
-            ring-1 ring-black ring-opacity-5
-            overflow-auto
-          "
-        >
-          <a href="#" class="block p-2 hover:bg-blue-500 rounded-t-sm"
-            >Hello1</a
-          >
-          <a href="#" class="block p-2 hover:bg-blue-500">Hello2</a>
-          <a href="#" class="block p-2 hover:bg-blue-500">Hello3</a>
-          <a href="#" class="block p-2 hover:bg-blue-500 rounded-b-sm"
-            >Hello4</a
-          >
+            <!--header-->
+            <div
+              class="
+                flex
+                items-start
+                justify-between
+                p-5
+                border-b border-solid border-blueGray-200
+                rounded-t
+              "
+            >
+              <h3 class="text-3xl font-semibold">Add User</h3>
+              <button
+                class="
+                  p-1
+                  ml-auto
+                  bg-transparent
+                  border-0
+                  text-black
+                  opacity-5
+                  float-right
+                  text-3xl
+                  leading-none
+                  font-semibold
+                  outline-none
+                  focus:outline-none
+                "
+                v-on:click="toggleModal()"
+              >
+                <span
+                  class="
+                    bg-transparent
+                    text-black
+                    opacity-5
+                    h-6
+                    w-6
+                    text-2xl
+                    block
+                    outline-none
+                    focus:outline-none
+                  "
+                >
+                  ×
+                </span>
+              </button>
+            </div>
+            <!--body-->
+            <div class="relative p-6 flex-auto">
+              <p class="my-4 text-blueGray-500 text-lg leading-relaxed">
+                Are you confirm to add?
+              </p>
+            </div>
+            <!--footer-->
+            <div
+              class="
+                flex
+                items-center
+                justify-center
+                p-6
+                border-t border-solid border-blueGray-200
+                rounded-b
+              "
+            >
+              <button
+                class="
+                  text-red-500
+                  bg-transparent
+                  border border-solid border-red-500
+                  hover:bg-red-500 hover:text-white
+                  active:bg-red-600
+                  font-bold
+                  uppercase
+                  text-sm
+                  px-6
+                  py-3
+                  rounded
+                  outline-none
+                  focus:outline-none
+                  mr-1
+                  mb-1
+                  ease-linear
+                  transition-all
+                  duration-150
+                  w-1/2
+                "
+                type="button"
+                v-on:click="toggleModal()"
+              >
+                Close
+              </button>
+              <button
+                class="
+                  text-green-500
+                  background-transparent
+                  font-bold
+                  uppercase
+                  px-6
+                  py-3
+                  rounded
+                  text-sm
+                  outline-none
+                  focus:outline-none
+                  mr-1
+                  mb-1
+                  ease-linear
+                  transition-all
+                  duration-150
+                  border border-solid border-green-500
+                  hover:bg-green-500 hover:text-white
+                  w-1/2
+                "
+                type="button"
+                v-on:click="toggleModal()"
+              >
+                Yes
+              </button>
+            </div>
+          </div>
         </div>
-      </transition>
-    </div>
+      </div>
+    </transition>
+    <div v-if="showModal" class="opacity-25 fixed inset-0 z-40 bg-black"></div>
   </div>
 </template>
 
 <script>
 export default {
-  layout: 'default',
+  name: 'small-modal',
   data() {
     return {
-      isOpen: false,
+      showModal: false,
     }
   },
   methods: {
-    openMenu() {
-      this.isOpen = !this.isOpen
-      //   }
+    toggleModal: function () {
+      this.showModal = !this.showModal
     },
   },
-  created() {},
 }
 </script>
-
-<style>
+<style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 1s ease;
 }
 
-.fade-enter-from,
+.fade-enter,
 .fade-leave-to {
   opacity: 0;
 }

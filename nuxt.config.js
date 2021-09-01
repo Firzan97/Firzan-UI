@@ -34,6 +34,7 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxt-hero-icons/solid/nuxt',
+    '@nuxt-hero-icons/outline/nuxt',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

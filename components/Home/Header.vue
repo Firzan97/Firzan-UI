@@ -4,9 +4,9 @@
       my-20
       text-white text-4xl
       font-bold
-      md:w-full md:text-left md:w-1/2
-      text-center
       w-full
+      md:text-left
+      text-center
       capitalize
     "
   >

@@ -9,6 +9,7 @@
       top-0
       bg-opacity-40 bg-gray-800
       backdrop-filter backdrop-blur
+      z-40
     "
   >
     <div class="border-b border-gray-700">

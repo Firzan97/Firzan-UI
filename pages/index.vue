@@ -1,6 +1,6 @@
 <template>
-  <div class="custom bg-gray-800 font-inter antialiased">
-    <div class="px-28">
+  <div class="font-inter antialiased">
+    <div class="md:px-28">
       <home-header />
       <div class="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
         <common-card title="Menu (Dropdown)" to="/menu" />
