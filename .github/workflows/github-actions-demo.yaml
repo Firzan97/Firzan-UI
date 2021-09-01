@@ -1,3 +1,5 @@
+on: [push]
+
 name: Deploy to Amazon ECS
 
 jobs:
